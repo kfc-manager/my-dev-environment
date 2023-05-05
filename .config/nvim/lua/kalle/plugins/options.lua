@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.g.mapleader = " " -- global leader for keymaps
+
 -- line numbers
 
 opt.relativenumber = true
@@ -7,8 +9,8 @@ opt.number = true
 
 -- tabs & identation
 
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
