@@ -45,7 +45,6 @@ return packer.startup(function(use)
     use({ "nvim-telescope/telescope.nvim", branck = "0.1.x" }) -- telescope
 
     -- code editing
-    use("mbbill/undotree") -- undo
     use("numToStr/Comment.nvim") -- comments
 
     -- lsp
