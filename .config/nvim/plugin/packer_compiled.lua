@@ -134,11 +134,6 @@ _G.packer_plugins = {
     path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["monokai.nvim"] = {
-    loaded = true,
-    path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/monokai.nvim",
-    url = "https://github.com/tanvirtin/monokai.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -184,10 +179,10 @@ _G.packer_plugins = {
     path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  undotree = {
+  ["vim-nightfly-guicolors"] = {
     loaded = true,
-    path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
+    path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
+    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   }
 }
 

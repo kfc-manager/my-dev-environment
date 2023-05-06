@@ -34,7 +34,7 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim")
 
     -- visuals
-    use("tanvirtin/monokai.nvim") -- colorscheme
+    use("bluz71/vim-nightfly-guicolors") -- colorscheme
     use("nvim-lualine/lualine.nvim") -- statusline
     use("nvim-tree/nvim-tree.lua") -- file explorer
     use("kyazdani42/nvim-web-devicons") -- file icons
