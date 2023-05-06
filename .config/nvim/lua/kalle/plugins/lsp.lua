@@ -4,10 +4,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     "gopls",
-    "jdtls",
-    "tsserver",
-    "html",
-    "cssls",
 })
 
 local cmp = require("cmp")
@@ -32,8 +28,38 @@ lsp.on_attach(function(client, bufnr)
         vim.keymap.set("i", "(", "()<Left>")
         vim.keymap.set("i", "[", "[]<Left>")
         vim.keymap.set("i", "{", "{}<Left>")
-        vim.keymap.set("i", '"', '""<Left>')
-        vim.keymap.set("i", "`", "``<Left>")
+        vim.keymap.set("i", '`', '``<Left>')
+        vim.keymap.set("i", "{<CR>", "{<CR><CR>}<Up><Tab>")
+        vim.keymap.set('i', ')', 'v:lua.check_bracket(")")', {expr=true})
+        vim.keymap.set('i', '}', 'v:lua.check_bracket("}")', {expr=true})
+        vim.keymap.set('i', ']', 'v:lua.check_bracket("]")', {expr=true})
+        vim.keymap.set('i', '"', 'v:lua.check_quote("\\\"")', {expr=true})
+        vim.keymap.set('i', '`', 'v:lua.check_quote("\\`")', {expr=true})
+
+        function _G.check_bracket(bracket)
+            local line = vim.api.nvim_get_current_line()
+            local col = vim.fn.col('.')
+            local char = string.sub(line, col, col)
+
+            if char == bracket then
+                return '<Right>'
+            else
+                return bracket
+            end
+        end
+
+        function _G.check_quote(quote)
+            local line = vim.api.nvim_get_current_line()
+            local col = vim.fn.col('.')
+            local char = string.sub(line, col, col)
+
+            if char == quote then
+                return '<Right>'
+            else
+                return quote .. quote .. "<Left>"
+            end
+        end
+
     end
 end)
 
