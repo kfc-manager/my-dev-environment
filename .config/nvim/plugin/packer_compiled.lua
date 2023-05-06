@@ -179,10 +179,10 @@ _G.packer_plugins = {
     path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-nightfly-guicolors"] = {
+  ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
-    url = "https://github.com/bluz71/vim-nightfly-guicolors"
+    path = "/Users/kiliancalefice/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   }
 }
 
