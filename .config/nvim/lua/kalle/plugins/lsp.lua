@@ -7,7 +7,6 @@ lsp.ensure_installed({
 })
 
 local cmp = require("cmp")
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
     ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
     ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
@@ -29,7 +28,7 @@ lsp.on_attach(function(client, bufnr)
         vim.keymap.set("i", "[", "[]<Left>")
         vim.keymap.set("i", "{", "{}<Left>")
         vim.keymap.set("i", '`', '``<Left>')
-        vim.keymap.set("i", "{<CR>", "{<CR><CR>}<Up><Tab>")
+        vim.keymap.set("i", "{<CR>", "{<CR>}<Up><Esc>o")
         vim.keymap.set('i', ')', 'v:lua.check_bracket(")")', {expr=true})
         vim.keymap.set('i', '}', 'v:lua.check_bracket("}")', {expr=true})
         vim.keymap.set('i', ']', 'v:lua.check_bracket("]")', {expr=true})
