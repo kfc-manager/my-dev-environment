@@ -4,6 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     "gopls",
+    "texlab",
 })
 
 local cmp = require("cmp")
@@ -14,7 +15,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(), --show completion suggestions
     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-    ["<Tab>"] = cmp.mapping.confirm({ select = false }),
+    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
 })
 
 lsp.setup_nvim_cmp({
@@ -22,7 +23,8 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.on_attach(function(client, bufnr)
-    if client.name == "gopls" then
+    lsp.default_keymaps({buffer = bufnr})
+    if client.name == "gopls" or client.name == "texlab" then
         -- auto closing brackets and auto closing string
         vim.keymap.set("i", "(", "()<Left>")
         vim.keymap.set("i", "[", "[]<Left>")
