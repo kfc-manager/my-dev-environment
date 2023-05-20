@@ -4,7 +4,11 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     "gopls",
+    "tsserver",
+    "html",
+    "cssls",
     "texlab",
+    "jdtls",
 })
 
 local cmp = require("cmp")
@@ -24,7 +28,7 @@ lsp.setup_nvim_cmp({
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
-    if client.name == "gopls" or client.name == "texlab" then
+    if client.name == "gopls" or client.name == "texlab" or client.name == "jdtls" then
         -- auto closing brackets and auto closing string
         vim.keymap.set("i", "(", "()<Left>")
         vim.keymap.set("i", "[", "[]<Left>")

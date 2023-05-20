@@ -79,7 +79,6 @@ return packer.startup(function(use)
     -- latex
     use ("lervag/vimtex")
 
-
     if packer_bootstrap then
         require("packer").sync()
     end
