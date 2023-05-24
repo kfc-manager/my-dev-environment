@@ -79,6 +79,9 @@ return packer.startup(function(use)
     -- latex
     use ("lervag/vimtex")
 
+    -- autotags for html
+    use ("windwp/nvim-ts-autotag")
+
     if packer_bootstrap then
         require("packer").sync()
     end

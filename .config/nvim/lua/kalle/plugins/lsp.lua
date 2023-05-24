@@ -66,9 +66,10 @@ lsp.on_attach(function(client, bufnr)
 
     end
 
-    if client.name == "html" or client.name == "tsserver" then
-        --TODO <></> automatically closing tags
+    if client.name == "texlab" then
+        vim.keymap.set("i", "$", "$$<Left>")
     end
+
 end)
 
 lsp.setup()
