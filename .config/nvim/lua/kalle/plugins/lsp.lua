@@ -64,10 +64,24 @@ lsp.on_attach(function(client, bufnr)
             end
         end
 
+        -- function _G.check_dollar(dollar)
+        --     local line = vim.api.nvim_get_current_line()
+        --     local col = vim.fn.col('.')
+        --     local char = string.sub(line, col, col)
+        --
+        --     if char == dollar then
+        --         return '<Right>'
+        --     else
+        --         return dollar.. dollar.. "<Left>"
+        --     end
+        -- end
+
+
     end
 
     if client.name == "texlab" then
         vim.keymap.set("i", "$", "$$<Left>")
+        vim.keymap.set('i', '$', 'v:lua.check_bracket("$")', {expr=true})
     end
 
 end)
